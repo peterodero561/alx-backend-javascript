@@ -42,4 +42,8 @@ export default class Currency {
     const code = this._code;
     return `${name} (${code})`;
   }
+
+  toString() {
+    return `${this._code} (${this._name})`;
+  }
 }
