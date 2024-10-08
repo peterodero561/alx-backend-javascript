@@ -4,8 +4,7 @@ export default function cleanSet(set, startString) {
   const newList = [];
   const arrayFromSet = [...set];
   arrayFromSet.forEach((str) => {
-    const element = str.slice(0, stringLen);
-    if (element === startString) {
+    if (str.startsWith(startString)) {
       const newElement = str.slice(stringLen);
       newList.push(newElement);
     }
