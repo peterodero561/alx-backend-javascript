@@ -21,9 +21,9 @@ function countStudents(filePath) {
         const header = lines[0].split(',');
         const students = lines.slice(1).filter((line) => line.trim() !== '');
 
-        console.log(`Number of students: ${students.length}`);
+        let output = `Number of students: ${students.length}`;
 
-        const fieldIndex = header.indexOf('field'); // Locate the 'field' column index
+        const fieldIndex = header.indexOf('field'); // Locate the 'field' column
         const firstNameIndex = header.indexOf('firstname'); // Locate the 'firstname' column index
 
         const fields = {};
@@ -40,10 +40,10 @@ function countStudents(filePath) {
         }
 
         for (const [field, names] of Object.entries(fields)) {
-          console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
+          output += `\nNumber of students in ${field}: ${names.length}. List: ${names.join(', ')}`;
         }
 
-        resolve();
+        resolve(output);
       } catch (parsingError) {
         reject(new Error('Cannot load the database'));
       }
