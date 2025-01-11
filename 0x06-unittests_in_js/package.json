@@ -2,7 +2,7 @@
   "name": "js-basics",
   "version": "1.0.0",
   "description": "",
-  "type":"module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
